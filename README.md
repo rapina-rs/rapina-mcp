@@ -1,6 +1,6 @@
 # rapina-mcp
 
-MCP (Model Context Protocol) server for the [Rapina](https://github.com/rapina-rs/rapina) web framework.
+MCP (Model Context Protocol) server for [Rapina](https://github.com/rapina-rs/rapina) framework.
 
 Gives AI assistants native understanding of Rapina projects — scaffold, inspect, diagnose, and introspect your application without leaving the conversation.
 
