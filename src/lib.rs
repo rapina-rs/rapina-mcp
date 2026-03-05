@@ -13,7 +13,9 @@ use rmcp::{
 pub struct NewProjectParams {
     #[schemars(description = "Name of the new Rapina project")]
     pub name: String,
-    #[schemars(description = "Directory where the project will be created (defaults to current directory)")]
+    #[schemars(
+        description = "Directory where the project will be created (defaults to current directory)"
+    )]
     pub path: Option<String>,
 }
 
@@ -52,6 +54,12 @@ pub struct RapinaMcp {
     tool_router: ToolRouter<Self>,
 }
 
+impl Default for RapinaMcp {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 #[tool_router]
 impl RapinaMcp {
     pub fn new() -> Self {
@@ -73,7 +81,9 @@ impl RapinaMcp {
         run_command(cmd)
     }
 
-    #[tool(description = "Add a resource (handler, model, migration) to an existing Rapina project")]
+    #[tool(
+        description = "Add a resource (handler, model, migration) to an existing Rapina project"
+    )]
     fn rapina_add(
         &self,
         Parameters(params): Parameters<AddResourceParams>,
@@ -99,7 +109,9 @@ impl RapinaMcp {
         run_command(cmd)
     }
 
-    #[tool(description = "Run rapina doctor to diagnose common issues in a Rapina project (missing config, auth misconfiguration, dependency problems)")]
+    #[tool(
+        description = "Run rapina doctor to diagnose common issues in a Rapina project (missing config, auth misconfiguration, dependency problems)"
+    )]
     fn rapina_doctor(
         &self,
         Parameters(params): Parameters<ProjectPathParams>,
@@ -164,7 +176,9 @@ impl RapinaMcp {
         run_command(cmd)
     }
 
-    #[tool(description = "Introspect a Rapina project and return a structured summary of its architecture: modules, routes, middleware, auth configuration, database setup, and dependencies")]
+    #[tool(
+        description = "Introspect a Rapina project and return a structured summary of its architecture: modules, routes, middleware, auth configuration, database setup, and dependencies"
+    )]
     fn rapina_explain(
         &self,
         Parameters(params): Parameters<ExplainParams>,
@@ -240,7 +254,13 @@ impl RapinaMcp {
         }
 
         report.push_str("## Configuration Files\n\n");
-        for name in ["rapina.toml", "Rapina.toml", ".env", ".env.example", "config.toml"] {
+        for name in [
+            "rapina.toml",
+            "Rapina.toml",
+            ".env",
+            ".env.example",
+            "config.toml",
+        ] {
             if root.join(name).exists() {
                 report.push_str(&format!("- {}\n", name));
             }
