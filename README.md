@@ -1,5 +1,10 @@
 # rapina-mcp
 
+[![Crates.io](https://img.shields.io/crates/v/rapina-mcp.svg)](https://crates.io/crates/rapina-mcp)
+[![Docs.rs](https://docs.rs/rapina-mcp/badge.svg)](https://docs.rs/rapina-mcp)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![CI](https://github.com/rapina-rs/rapina-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/rapina-rs/rapina-mcp/actions/workflows/ci.yml)
+
 MCP (Model Context Protocol) server for [Rapina](https://github.com/rapina-rs/rapina) framework.
 
 Gives AI assistants native understanding of Rapina projects — scaffold, inspect, diagnose, and introspect your application without leaving the conversation.

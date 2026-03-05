@@ -2,7 +2,7 @@
 name = "rapina-mcp"
 version = "0.2.0"
 edition = "2024"
-rust-version = "1.85"
+rust-version = "1.88"
 description = "MCP server for the Rapina web framework"
 license = "MIT"
 repository = "https://github.com/rapina-rs/rapina-mcp"
